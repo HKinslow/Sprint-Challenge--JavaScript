@@ -6,8 +6,8 @@
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-const consume = (a, b, cb) => {
-  cb(a, b);
+function consume( a, b, cb ) {
+  return cb( a, b );
 }
 
 /* Step 2: Create several functions to callback with consume();
@@ -16,11 +16,21 @@ const consume = (a, b, cb) => {
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+function add( c, d, cb ) {
+  return c + d;
+}
 
+function multiply ( x, y, cb ) {
+  return x * y;
+}
+
+function greeting( firstName, lastName, cb ) {
+  return `Hello ${firstName} ${lastName}, nice to meet you`;
+}
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
@@ -29,6 +39,8 @@ const consume = (a, b, cb) => {
 
 // Explanation: 
 
+// The variable is on the inside of the myFunction function which makes it accessible for nestedFunction since it is nested inside a 
+// function already.
 
 const external = "I'm outside the function";
 
