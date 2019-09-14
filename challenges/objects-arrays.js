@@ -75,7 +75,18 @@ const graduates = [
 This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+const universities = graduates.sort((a, b) => {
+  if (a.university > b.university) {
+    return 1;
+  }
+
+  if (b.university > a.university) {
+    return -1;
+  }
+
+  return 0;
+});
+
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student.
@@ -86,12 +97,22 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = [];
+graduates.forEach((contact) => {
+  contactInfo.push(`${contact.first_name} ${contact.email}`)
+});
+
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called
 unisWithUni that contains them all. This will be an array of objects. Log the result. */
 
-const unisWithUni = [];
+const unisWithUni = graduates.filter((unis) => {
+  if(unis.university > 'Uni') {
+    return true;
+  } else {
+    return false;
+  }
+})
 console.log(unisWithUni);
 
 
@@ -172,4 +193,3 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
