@@ -34,13 +34,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 2. What is the difference between a function and a method?
 
-    A method is something you call on a function.
+    A method is used almost exclusively in object-oriented programming. A function is something that takes a bunch of inputs and returns one or more values.
     
 3. What is closure?
 
+    It gives you access to an outer function's scope from an inner function.
+
 4. Describe the four rules of the 'this' keyword.
 
+    -the 'new' keyword is used when calling the function if 'this' is inside the function which means its a new object.
+    -If 'apply', 'call', 'bind' are used to call a function, 'this' used inside the function is the object that is passed in as the argument.
+    -If a function is called as a method- if dot notation is used to invoke the function, 'this' is the object that the function property of.
+    - If a function is invoked it means 'this' is the global object.
+
+
 5. Why do we need super() in an extended class?
+
+    Because it calls the parent class
 
 ## Project Set up
 
